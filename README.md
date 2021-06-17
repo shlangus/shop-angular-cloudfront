@@ -38,3 +38,7 @@ https://d3uu5xarltty69.cloudfront.net
 Deployed as a new project:
 https://d3efqt27tbkk5.cloudfront.net/
 (See /products request sent to api gw url)
+
+#Task 4
+Deployed as a new project because it needs a separate service connected to DB
+https://d2ymm5l6rcwor7.cloudfront.net/
