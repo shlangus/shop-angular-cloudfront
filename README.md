@@ -1,31 +1,35 @@
-# Shop Angular Cloudfront
+## Task 2
 
-Angular version: ~12.
+### Manually created hosting using S3 and CloudFront:
 
-Repo maintainers:
+S3 bucket (should return 403):
+https://node-cloud-demo.s3-eu-west-1.amazonaws.com
 
-- [Sergey Gultyayev](https://github.com/gultyaev)
+S3 static hosting (should return 403):
+http://node-cloud-demo.s3-website-eu-west-1.amazonaws.com/
 
-## The purpose
+CloudFront (should work):
+https://d326p4e2s4s6it.cloudfront.net/
 
-The repository was created to have an Angular version of e-shop for EPAM NodeJS AWS course. At the same time we strive to make this repository follows best practices so it may be used as a starter for new projects with all the necessary toolings already set up.
+### Automated, made as a second bucket and CloudFront distribution:
 
-## NodeJS AWS course integration
+#### Usage
 
-All the necessary API endpoints are in the environments files `environment.ts` (for dev builds). Also it contains feature flags to enable/disable endpoints invocations from within the app so to ensure that you don't get errors for not implemented API endpoints.
+If CloudFront is not created yet (first time usage)
 
-## Contribution
+`npm run cloudfront:setup`
 
-Create an issue with the detailed description of the improvement/issue.
+after that build & deploy can be done by
 
-If you would like to help implementing some feature, you should ask the maintainers for approval so to ensure that the feature is desired in the repository and no efforts go wasted.
+`npm run build_and_deploy`
 
-## Get up and running
+#### Links
 
-Prerequisites: NodeJS v14
+S3 bucket (should return 403):
+https://node-cloud-demo-2.s3-eu-west-1.amazonaws.com
 
-Follow the steps:
+S3 static hosting (should return 403):
+http://node-cloud-demo-2.s3-website-eu-west-1.amazonaws.com/
 
-- git clone
-- npm i
-- ng serve
+CloudFront (should work):
+https://d3uu5xarltty69.cloudfront.net
