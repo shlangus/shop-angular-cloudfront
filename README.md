@@ -33,3 +33,8 @@ http://node-cloud-demo-2.s3-website-eu-west-1.amazonaws.com/
 
 CloudFront (should work):
 https://d3uu5xarltty69.cloudfront.net
+
+#Task 3
+Deployed as a new project:
+https://d3efqt27tbkk5.cloudfront.net/
+(See /products request sent to api gw url)

@@ -1,4 +1,4 @@
-service: node-cloud-demo
+service: node-cloud-demo-task-3
 frameworkVersion: "2"
 
 provider:
@@ -13,7 +13,7 @@ plugins:
 
 custom:
   client:
-    bucketName: node-cloud-demo-2
+    bucketName: node-cloud-demo-task-3
     distributionFolder: dist/app
     errorDocument: index.html
   # serverless-single-page-app-plugin config:
