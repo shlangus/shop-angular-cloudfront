@@ -38,7 +38,11 @@ export class CartService {
   }
 
   empty(): void {
-    this.#cartSource.next({});
+    this.set({});
+  }
+
+  set(items: Record<string, number>): void {
+    this.#cartSource.next(items);
   }
 
   private updateCount(id: string, type: 1 | -1): void {
