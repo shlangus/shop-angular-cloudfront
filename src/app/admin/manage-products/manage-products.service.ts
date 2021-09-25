@@ -2,10 +2,11 @@ import { Injectable, Injector } from '@angular/core';
 import { EMPTY, Observable } from 'rxjs';
 import { ApiService } from '../../core/api.service';
 import { switchMap } from 'rxjs/operators';
+import { AuthService } from '../../core/auth.service';
 
 @Injectable()
 export class ManageProductsService extends ApiService {
-  constructor(injector: Injector) {
+  constructor(injector: Injector, private auth: AuthService) {
     super(injector);
   }
 
@@ -32,7 +33,15 @@ export class ManageProductsService extends ApiService {
   private getPreSignedUrl(fileName: string): Observable<string> {
     const url = this.getUrl('import', 'import');
 
+    const token = this.auth.getToken();
+
     return this.http.get<string>(url, {
+      ...(token && {
+        headers: {
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          Authorization: `Bearer ${token}`,
+        },
+      }),
       params: {
         name: fileName,
       },
